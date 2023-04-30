@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-    font-family: Cinzel, sans-serif;
+    font-family: Cinzel, serif;
     color: #940f0f;
     margin: 1rem 0;
     justify-content: center;
@@ -31,12 +31,16 @@ form {
     flex-wrap: wrap;
     justify-content: center;
     padding: 1rem;
+    color: rgb(224, 224, 224);
+    font-family: sans-serif;
 }
 
 form input {
     background-color: #1f1f1f;
-    color: white;
-    padding: 0.5em
+    padding: 0.5em;
+    color: rgb(224, 224, 224);
+    font-family: Cinzel, serif;
+    font-size: 1em;
 }
 
 div.container {
@@ -73,8 +77,12 @@ div.section {
 
 form ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 5px 0;
+}
+
+form ul li {
+    padding: 4px 0;
 }
 
 input[type=submit] {
@@ -97,5 +105,4 @@ tr {
 label {
     padding: 4px;
     margin: 2px;
-    /* border: 1px solid red; */
 }
