@@ -7,19 +7,19 @@
         <div class="fc">
             <p>
                 {{ form.roll.label }}
-                {{ form.target.label }}
+                {{ form.roll(size=1) }}
             </p>
             <p>
-                {{ form.roll(size=1) }}
+                {{ form.target.label }}
                 {{ form.target(size=1) }}
             </p>
         </div>
         <div class="fr">
-            <div>
+            <div class="section">
                 {{ form.attack_type.label }}
                 {{ form.attack_type() }}
             </div>
-            <div>
+            <div class="section">
                 {{ form.modifiers.label }}
                 {{ form.modifiers() }}
             </div>

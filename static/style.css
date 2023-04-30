@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-    font-family: sans-serif;
+    font-family: Cinzel, sans-serif;
     color: #940f0f;
     margin: 1rem 0;
     justify-content: center;
@@ -50,13 +50,25 @@ div.fc {
     align-items: center;
 }
 
+div.fc p {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: 10px;
+}
+
 div.fr {
     display: flex;
     flex-flow: row wrap;
 }
 
-div {
-    padding: 10px;
+div.section {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: 1em;
+    padding: 1em;
+    background: rgb(54, 54, 54);
 }
 
 form ul {
@@ -80,4 +92,10 @@ table {
 td,
 tr {
     padding: 0.5em;
+}
+
+label {
+    padding: 4px;
+    margin: 2px;
+    /* border: 1px solid red; */
 }
