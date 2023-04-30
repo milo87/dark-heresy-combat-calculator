@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Dark Heresy 2.0 Combat Calculator</title>
+        <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
+    </head>
+    <body>
+        <h1>Dark Heresy 2.0 Combat Calculator</h1>
+        {% block form %} {% endblock %}
+        <hr/>
+        {% if results %}
+        <table>
+            <tr>
+                {% for key in results.keys() %}
+                <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for value in results.values() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+        {% endif %}
+    </body>
+</html>

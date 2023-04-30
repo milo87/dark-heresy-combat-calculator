@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block form %}
+<form action="/" method=post>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    <div class="container">
+        <div class="fc">
+            <p>
+                {{ form.roll.label }}
+                {{ form.target.label }}
+            </p>
+            <p>
+                {{ form.roll(size=1) }}
+                {{ form.target(size=1) }}
+            </p>
+        </div>
+        <div class="fr">
+            <div>
+                {{ form.attack_type.label }}
+                {{ form.attack_type() }}
+            </div>
+            <div>
+                {{ form.modifiers.label }}
+                {{ form.modifiers() }}
+            </div>
+        </div>
+        <div class="fc">    
+            <p>
+                <input type="Submit" value="Calculate">
+            </p>
+        </div>
+    </div>
+</form>
+{% endblock %}
