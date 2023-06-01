@@ -56,7 +56,7 @@ div.fc {
 
 div.fc p {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     align-items: center;
     margin: 10px;
 }

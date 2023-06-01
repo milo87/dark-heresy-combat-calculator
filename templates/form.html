@@ -18,7 +18,7 @@
                 {{ form.misc(size=1) }}
             </p>
         </div>
-        <div class="fr">
+        <div class="fc">
             <div class="section">
                 {{ form.attack_type.label }}
                 {{ form.attack_type() }}
@@ -30,10 +30,10 @@
             <div class="section">
                 <label for="conditionals">Conditional Modifiers</label>
                 <div id="conditionals">
-                    <p>
+                    <div class="section">
                         {{ form.set_range.label }}
                         {{ form.set_range() }}
-                    </p>
+                    </div>
                     <p>
                         {{ form.pinned() }}
                         {{ form.pinned.label }}
