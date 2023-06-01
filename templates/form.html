@@ -13,6 +13,10 @@
                 {{ form.target.label }}
                 {{ form.target(size=1) }}
             </p>
+            <p>
+                {{ form.misc.label }}
+                {{ form.misc(size=1) }}
+            </p>
         </div>
         <div class="fr">
             <div class="section">
@@ -22,6 +26,27 @@
             <div class="section">
                 {{ form.modifiers.label }}
                 {{ form.modifiers() }}
+            </div>
+            <div class="section">
+                <label for="conditionals">Conditional Modifiers</label>
+                <div id="conditionals">
+                    <p>
+                        {{ form.set_range.label }}
+                        {{ form.set_range() }}
+                    </p>
+                    <p>
+                        {{ form.pinned() }}
+                        {{ form.pinned.label }}
+                    </p>
+                    <p>
+                        {{ form.target_stunned() }}
+                        {{ form.target_stunned.label }}
+                    </p>
+                    <p>
+                        {{ form.untrained() }}
+                        {{ form.untrained.label }}
+                    </p>
+                </div>
             </div>
         </div>
         <div class="fc">    

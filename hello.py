@@ -17,8 +17,15 @@ def index():
         roll = int(request.form["roll"])
         target = int(request.form["target"])
 
-        attack_type = request.form["attack_type"]
-        modifiers = request.form["modifiers"]
+        attack_type = request.form.get("attack_type")
+        modifiers = request.form.get("modifiers")
+        range_choice = request.form.get("set_range")
+        is_untrained = request.form.get("untrained", False)
+        target_stunned = request.form.get("target_stunned", False)
+        is_pinned = request.form.get("pinned", False)
+
+        print(range_choice)
+
         extra_hits_divisor = 0
 
         if attack_type == "lighting_full":
@@ -36,6 +43,24 @@ def index():
             target += 10
         elif modifiers == "aim_full":
             target += 20
+
+        if is_pinned:
+            target -= 20
+
+        if target_stunned:
+            target += 20
+
+        if is_untrained:
+            target -= 20
+
+        if range_choice == "point_blank":
+            target += 30
+        elif range_choice == "short":
+            target += 10
+        elif range_choice == "long":
+            target -= 10
+        elif range_choice == "extreme":
+            target -= 30
 
         results["Roll"] = roll
         results["Target"] = target
