@@ -7,8 +7,6 @@
     </head>
     <body>
         <h1>Dark Heresy 2.0 Combat Calculator</h1>
-        {% block form %} {% endblock %}
-        <hr/>
         {% if results %}
         <table>
             <tr>
@@ -23,5 +21,7 @@
             </tr>
         </table>
         {% endif %}
+        <hr/>
+        {% block form %} {% endblock %}
     </body>
 </html>

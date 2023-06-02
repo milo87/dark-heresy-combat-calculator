@@ -16,6 +16,7 @@ def index():
     if request.method == "POST" and form.validate():
         roll = int(request.form["roll"])
         target = int(request.form["target"])
+        misc_modifier = int(request.form.get("misc", 0))
 
         attack_type = request.form.get("attack_type")
         modifiers = request.form.get("modifiers")
@@ -43,6 +44,8 @@ def index():
             target += 10
         elif modifiers == "aim_full":
             target += 20
+        elif modifiers == "guarded":
+            target -= 10
 
         if is_pinned:
             target -= 20
@@ -61,6 +64,8 @@ def index():
             target -= 10
         elif range_choice == "extreme":
             target -= 30
+
+        target += misc_modifier
 
         results["Roll"] = roll
         results["Target"] = target

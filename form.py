@@ -21,6 +21,14 @@ class CombatForm(Form):
         ],
     )
 
+    misc = IntegerField(
+        "Misc Modifier",
+        validators=[
+            validators.number_range(min=-100, max=100),
+        ],
+        default=0,
+    )
+
     attack_type = RadioField(
         "Attack Type",
         choices=[
@@ -42,14 +50,6 @@ class CombatForm(Form):
             ("aim_full", "Aim, Full (+20)"),
         ],
         default="none",
-    )
-
-    misc = IntegerField(
-        "Misc Modifier",
-        validators=[
-            validators.number_range(min=-100, max=100),
-        ],
-        default=0,
     )
 
     # other conditional effects
