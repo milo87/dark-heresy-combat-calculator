@@ -7,28 +7,28 @@
         <div class="fc">
             <p>
                 {{ form.roll.label }}
-                {{ form.roll(size=1) }}
+                {{ form.roll(size=3) }}
             </p>
             <p>
                 {{ form.target.label }}
-                {{ form.target(size=1) }}
+                {{ form.target(size=3) }}
             </p>
             <p>
                 {{ form.misc.label }}
-                {{ form.misc(size=1) }}
+                {{ form.misc(size=3) }}
             </p>
         </div>
         <div class="fr">
             <div class="section">
-                {{ form.attack_type.label }}
+                {{ form.attack_type.label(class="section_label") }}
                 {{ form.attack_type() }}
             </div>
             <div class="section">
-                {{ form.modifiers.label }}
+                {{ form.modifiers.label(class="section_label") }}
                 {{ form.modifiers() }}
             </div>
             <div class="section">
-                <label for="conditionals">Conditional Modifiers</label>
+                <label for="conditionals" class="section_label">Conditional Modifiers</label>
                 <div id="conditionals">
                     <p class="top_label">
                         {{ form.set_range.label }}

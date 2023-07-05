@@ -82,6 +82,11 @@ div.section {
     background: rgb(54, 54, 54);
 }
 
+label.section_label {
+    font-family: Cinzel, serif;
+    font-size: 1.2em;
+}
+
 form ul {
     list-style: none;
     margin: 0px;

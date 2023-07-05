@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 from flask_wtf import CSRFProtect
 from form import CombatForm
 from utils import Utils
+from os import environ
 
 csrf = CSRFProtect()
 app = Flask(__name__)
@@ -25,18 +26,15 @@ def index():
         target_stunned = request.form.get("target_stunned", False)
         is_pinned = request.form.get("pinned", False)
 
-        print(range_choice)
-
         extra_hits_divisor = 0
 
         if attack_type == "lighting_full":
             extra_hits_divisor = 2
+            target -= 10
         elif attack_type == "swift_semi":
             extra_hits_divisor = 1
-            target -= 10
         elif attack_type == "suppressing" or attack_type == "called":
             target -= 20
-        # Standard
         else:
             target += 10
 
@@ -89,4 +87,6 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    debug_mode = bool(environ.get("DEBUG", False))
+
+    app.run(host="0.0.0.0", debug=debug_mode)

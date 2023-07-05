@@ -1,5 +1,11 @@
 from flask_wtf import Form
-from wtforms.fields import IntegerField, RadioField, BooleanField, SelectField
+from wtforms.fields import (
+    IntegerField,
+    RadioField,
+    BooleanField,
+    SelectField,
+    FieldList,
+)
 from wtforms import widgets
 from wtforms import validators
 
@@ -36,7 +42,8 @@ class CombatForm(Form):
             ("swift_semi", "Swift/Semi-Auto"),
             ("lighting_full", "Lightning/Full Auto (-10)"),
             ("supressing", "Suppressing Fire (-20)"),
-            ("called", "Called Shot (-20)"),
+            ("called", "Called Shot (-20, Full)"),
+            ("all_out", "All Out Attack (+30, Full)"),
         ],
         default="standard",
     )
